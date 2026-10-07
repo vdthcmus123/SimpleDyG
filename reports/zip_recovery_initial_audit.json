@@ -1,0 +1,13 @@
+{
+  "source": "C:\\Users\\ASUS\\Downloads\\simpledyg_paper_author_compat.zip",
+  "destination": "C:\\Users\\ASUS\\SimpleDyG\\recovery\\simpledyg_paper_author_compat_recovered.zip",
+  "complete_records": 126,
+  "copied_local_record_bytes": 2326188252,
+  "omitted_tail_bytes": 86102743,
+  "scan_stop_reason": "incomplete_file: runs/UCI_13_SimpleDyG_no_time_s8_ddee4221376b/best.pt",
+  "source_modified": false,
+  "crc_validation": "not_yet_run",
+  "manifest_records": 35,
+  "direct_result_json_records": 17,
+  "core_fingerprint": "2134687a7c5548d638a3ecddc8b1d0bb3fd2837177abf588a02f1e6ae2170406"
+}

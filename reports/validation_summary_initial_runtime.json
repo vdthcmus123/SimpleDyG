@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-05",
+  "unit_checks_passed": 9,
+  "unit_checks_failed": 0,
+  "component_smoke_corrected": {
+    "runs": 12,
+    "datasets": [
+      "UCI_13",
+      "ML_10M_13"
+    ],
+    "models": [
+      "SimpleDyG",
+      "TGAT",
+      "GraphMixer",
+      "DyGFormer"
+    ]
+  },
+  "component_smoke_author_compat": {
+    "runs": 4,
+    "datasets": [
+      "UCI_13",
+      "ML_10M_13"
+    ],
+    "variants": [
+      "full",
+      "no_time"
+    ]
+  },
+  "delivered_notebook": {
+    "code_cells_executed": 7,
+    "all_cells_passed": true,
+    "offline_bundle_passed": true,
+    "completed_run_reuse_passed": true,
+    "smoke_runs": 5,
+    "elapsed_seconds": 11.95,
+    "environment": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "torch": "2.5.1+cpu",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "cuda": null,
+      "device": "cpu",
+      "gpu": null,
+      "author_expected_commit": "fa0dc82587d8ce787345a0379f65a0dcf5d9d9ff",
+      "dyglib_expected_commit": "3aacc36b94b8d2d8293d70a74fdf6d39089b4163",
+      "transformers": "4.44.2",
+      "tokenizers": "0.19.1",
+      "boto3": "1.43.108"
+    },
+    "scope": "fresh local Python execution of all notebook cells; CPU smoke; not a Kaggle GPU full run"
+  },
+  "files": {
+    "notebooks/SimpleDyG_Kaggle_Full_Pipeline.ipynb": {
+      "bytes": 72644,
+      "sha256": "2bc4da4ed16b920bf55b8ef8e07e4af66e1f8f86a168d6d1aecdcc1317f995b6"
+    },
+    "notebooks/SimpleDyG_Kaggle_Inputs.zip": {
+      "bytes": 1423893,
+      "sha256": "00674e56e3c81cd8fa42ff119e7638badc6355d4efabbcf864c3b0c8a4b98107"
+    },
+    "tools/kaggle_pipeline.py": {
+      "bytes": 45961,
+      "sha256": "0ede955a4198f09cc886b146d24fc84133ce1d242ca81fe3d43ac14a5f8563d0"
+    }
+  },
+  "limitations": [
+    "CPU subset smoke only; no full Kaggle GPU training",
+    "No claim of reproducing Table 2 or Table 4 scores",
+    "GPU AMP and full-history runtime remain unverified"
+  ],
+  "sources": {
+    "author_commit": "fa0dc82587d8ce787345a0379f65a0dcf5d9d9ff",
+    "dyglib_commit": "3aacc36b94b8d2d8293d70a74fdf6d39089b4163",
+    "dyglib_pinned_files_verified": 7
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-07",
+  "user_error": "Existing output has different config/core/source. Do not mix experiments.",
+  "diagnosis": "Resume found the correct output; full clones can add Python files absent from the original source bundle inventory.",
+  "fix": "Verify all saved source/data hashes, stage the exact saved inventory, recompute and require identical original config/run identity.",
+  "artifacts": {
+    "SimpleDyG_Kaggle_2GPU_Resume.ipynb": {
+      "bytes": 127263,
+      "sha256": "a88d88000cfbedd051c80ccbcb2eba6cef68abf94f5d04eaa0a64bca4e664d1d",
+      "code_cells": 7,
+      "default_resume": false,
+      "training_runtime_unchanged": true
+    },
+    "SimpleDyG_Kaggle_2GPU_Continue_Fixed.ipynb": {
+      "bytes": 127802,
+      "sha256": "245c13c26daea6f4f37de1fbe1064e5396214c7ff5b2741f434ed99cbedc381a",
+      "code_cells": 7,
+      "default_resume": true,
+      "training_runtime_unchanged": true
+    }
+  },
+  "training_runtime_sha256": "e6e6142856ea68e46feba431bdfbf9748380818caffaa37c604745af7d972ab8",
+  "original_runtime_sha256": "e6e6142856ea68e46feba431bdfbf9748380818caffaa37c604745af7d972ab8",
+  "compatible_with_existing_dual_resume_v1_checkpoints": true,
+  "input_bundle": {
+    "bytes": 1424584,
+    "sha256": "d66067a60a86f8552ff709e66b7def23bbded44ad9b0260da55a3c05319f33f4",
+    "crc_passed": true,
+    "original_source_members_unchanged": 33,
+    "old_two_gpu_source_bundle_still_compatible": true
+  },
+  "regression_tests": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0,
+    "invocations": [
+      {
+        "command": "unittest discover -s tests -p test_resume_source_alignment.py -v",
+        "tests": 6,
+        "passed": 6,
+        "seconds": 28.635
+      },
+      {
+        "command": "unittest discover -s tests -p test_resume_source_alignment.py -k two_datasets -v",
+        "tests": 1,
+        "passed": 1,
+        "seconds": 3.912
+      }
+    ],
+    "scope": "Local CPU; changed-source/data/runtime rejection; identical config and run IDs; two baseline subprocesses restore full states; two preprocessed datasets keep identical audits."
+  },
+  "notebook_execution": {
+    "date": "2026-10-07",
+    "passed": true,
+    "notebook": "C:\\Users\\ASUS\\SimpleDyG\\notebooks\\SimpleDyG_Kaggle_2GPU_Continue_Fixed.ipynb",
+    "phases": [
+      {
+        "phase": "fresh",
+        "code_cells_executed": 7,
+        "complete_runs": 5,
+        "worker_ids": [
+          0,
+          1
+        ],
+        "reused_without_training": false,
+        "all_best_checkpoints_retained": true,
+        "source_alignment": null
+      },
+      {
+        "phase": "restored_zip_full_clone",
+        "code_cells_executed": 7,
+        "complete_runs": 5,
+        "worker_ids": [
+          0,
+          1
+        ],
+        "reused_without_training": true,
+        "all_best_checkpoints_retained": true,
+        "source_alignment": {
+          "saved_source_files": 12,
+          "verified_source_files": 12,
+          "extra_files_excluded": [
+            "author/unused_extra.py",
+            "dyglib/models/UnusedBackbone.py"
+          ],
+          "source_fingerprint": "98a45dabefa4b29c82ccde24d996e265e4d01584baa8753429d3f93d8b6c4a4f",
+          "runtime_fingerprint": "e6e6142856ea68e46feba431bdfbf9748380818caffaa37c604745af7d972ab8",
+          "aligned": true,
+          "verified_data_files": 7,
+          "author_view": "C:\\Users\\ASUS\\SimpleDyG\\tmp\\resume_source_notebook_x7hcuib6\\restored_zip_full_clone\\kaggle_working\\resume_verified_sources_63784uxq\\SimpleDyG",
+          "dyglib_view": "C:\\Users\\ASUS\\SimpleDyG\\tmp\\resume_source_notebook_x7hcuib6\\restored_zip_full_clone\\kaggle_working\\resume_verified_sources_63784uxq\\DyGLib"
+        }
+      },
+      {
+        "phase": "restored_directory_full_clone",
+        "code_cells_executed": 7,
+        "complete_runs": 5,
+        "worker_ids": [
+          0,
+          1
+        ],
+        "reused_without_training": true,
+        "all_best_checkpoints_retained": true,
+        "source_alignment": {
+          "saved_source_files": 12,
+          "verified_source_files": 12,
+          "extra_files_excluded": [
+            "author/unused_extra.py",
+            "dyglib/models/UnusedBackbone.py"
+          ],
+          "source_fingerprint": "98a45dabefa4b29c82ccde24d996e265e4d01584baa8753429d3f93d8b6c4a4f",
+          "runtime_fingerprint": "e6e6142856ea68e46feba431bdfbf9748380818caffaa37c604745af7d972ab8",
+          "aligned": true,
+          "verified_data_files": 7,
+          "author_view": "C:\\Users\\ASUS\\SimpleDyG\\tmp\\resume_source_notebook_x7hcuib6\\restored_directory_full_clone\\kaggle_working\\resume_verified_sources_u85wjvee\\SimpleDyG",
+          "dyglib_view": "C:\\Users\\ASUS\\SimpleDyG\\tmp\\resume_source_notebook_x7hcuib6\\restored_directory_full_clone\\kaggle_working\\resume_verified_sources_u85wjvee\\DyGLib"
+        }
+      }
+    ],
+    "elapsed_seconds": 34.52,
+    "scope": "Python 3.13 local CPU; all delivered cells; actual two-process pipeline; ZIP and directory resume with additional full-clone files; no live dual-T4 test"
+  },
+  "validation_environment": {
+    "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+    "torch": "2.6.0+cpu",
+    "device": "CPU"
+  },
+  "limitation": "No live Kaggle dual-T4 run of the fixed notebook and no local inspection of the user 6.35 GB ZIP; resume format compatibility is verified on real CPU fixtures."
+}

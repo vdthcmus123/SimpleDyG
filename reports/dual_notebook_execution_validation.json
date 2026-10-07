@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "notebook": "C:\\Users\\ASUS\\SimpleDyG\\notebooks\\SimpleDyG_Kaggle_2GPU_Resume.ipynb",
+  "phases": [
+    {
+      "phase": "fresh",
+      "code_cells_executed": 7,
+      "complete_runs": 5,
+      "worker_ids": [
+        0,
+        1
+      ],
+      "reused_without_training": false,
+      "all_best_checkpoints_retained": true
+    },
+    {
+      "phase": "restored",
+      "code_cells_executed": 7,
+      "complete_runs": 5,
+      "worker_ids": [
+        0,
+        1
+      ],
+      "reused_without_training": true,
+      "all_best_checkpoints_retained": true
+    }
+  ],
+  "elapsed_seconds": 30.73,
+  "scope": "Python 3.13 local CPU; actual two-process pipeline and ZIP restore; no live dual-T4 test"
+}

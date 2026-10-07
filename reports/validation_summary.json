@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-05",
+  "current_validation": "reports/python313_fix_validation.json",
+  "unit_tests": {
+    "python312": {
+      "total": 13,
+      "passed": 13,
+      "failed": 0,
+      "hf_reference_comparisons_passed": 3
+    },
+    "python313": {
+      "total": 13,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 3,
+      "skip_reason": "HF reference packages intentionally absent; reference checks passed on Python 3.12."
+    }
+  },
+  "delivered_notebook": {
+    "code_cells_executed": 7,
+    "all_cells_passed": true,
+    "offline_bundle_passed": true,
+    "completed_run_reuse_passed": true,
+    "smoke_runs": 5,
+    "elapsed_seconds": 35.67,
+    "environment": {
+      "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+      "torch": "2.6.0+cpu",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "cuda": null,
+      "device": "cpu",
+      "gpu": null,
+      "author_expected_commit": "fa0dc82587d8ce787345a0379f65a0dcf5d9d9ff",
+      "dyglib_expected_commit": "3aacc36b94b8d2d8293d70a74fdf6d39089b4163",
+      "boto3": "1.43.108",
+      "tokenizer_runtime": "embedded NodeTokenizer; no Hugging Face/Rust dependency",
+      "author_optimizer": "embedded legacy AdamW arithmetic"
+    },
+    "hf_imports_blocked": true,
+    "scope": "fresh local Python execution of all notebook cells; CPU smoke; not a Kaggle GPU full run"
+  },
+  "fixed_notebook_checks": {
+    "original_settings_preserved": true,
+    "setup_matches_canonical": true,
+    "core_matches_canonical": true,
+    "outputs_cleared": true
+  },
+  "files": {
+    "notebooks/SimpleDyG_Kaggle_Full_Pipeline.ipynb": {
+      "bytes": 78208,
+      "sha256": "d7d08e4d4381ef491fc58fd71712d3f68b0f933c31909d56a2e1086c8c8abaf2"
+    },
+    "notebooks/notebook77b2d6b8b8_fixed.ipynb": {
+      "bytes": 78208,
+      "sha256": "d7d08e4d4381ef491fc58fd71712d3f68b0f933c31909d56a2e1086c8c8abaf2"
+    },
+    "notebooks/SimpleDyG_Kaggle_Inputs.zip": {
+      "bytes": 1423893,
+      "sha256": "35475f49371bb1f057610c6e3a37b465fed2ad41a974b9bf05bad8dbc70733a0"
+    },
+    "tools/kaggle_pipeline.py": {
+      "bytes": 50539,
+      "sha256": "2134687a7c5548d638a3ecddc8b1d0bb3fd2837177abf588a02f1e6ae2170406"
+    }
+  },
+  "limitations": [
+    "Local Windows CPU smoke runs only; no full Kaggle GPU training.",
+    "Smoke scores do not establish paper reproduction.",
+    "GPU AMP and full-history runtime remain unverified."
+  ],
+  "sources": {
+    "author_commit": "fa0dc82587d8ce787345a0379f65a0dcf5d9d9ff",
+    "dyglib_commit": "3aacc36b94b8d2d8293d70a74fdf6d39089b4163",
+    "dyglib_pinned_files_verified": 7
+  },
+  "initial_runtime_validation": "reports/validation_summary_initial_runtime.json",
+  "initial_runtime_note": "Historical component checks used the earlier HF-dependent runtime; current notebook and hashes are reported above."
+}

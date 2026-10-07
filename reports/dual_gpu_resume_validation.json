@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-06",
+  "previous_run_parallelism": "sequential runs on cuda:0",
+  "new_parallelism": "two independent Python worker processes; one visible GPU per worker; shared transactional job queue",
+  "artifacts": {
+    "tools/kaggle_pipeline_dual.py": {
+      "bytes": 93220,
+      "sha256": "e6e6142856ea68e46feba431bdfbf9748380818caffaa37c604745af7d972ab8"
+    },
+    "notebooks/SimpleDyG_Kaggle_2GPU_Resume.ipynb": {
+      "bytes": 120003,
+      "sha256": "2e92def7936da8256e63406693d37cbda5f37201fd5e14523f5938171e1d702a"
+    },
+    "notebooks/SimpleDyG_Kaggle_2GPU_Inputs.zip": {
+      "bytes": 1424509,
+      "sha256": "3d415578f65860fbdf81cac605ddb2fc37db886d734f8d485aae09caec17ef87"
+    }
+  },
+  "package_checks": {
+    "notebook_schema_valid": true,
+    "code_cells_parsed": 7,
+    "embedded_runtime_matches_file": true,
+    "zip_runtime_manifest_matches": true,
+    "input_zip_crc_passed": true,
+    "original_bundle_members_preserved_byte_for_byte": 33
+  },
+  "defaults": {
+    "PROFILE": "paper",
+    "GPU_IDS": [
+      0,
+      1
+    ],
+    "SESSION_HOURS": 10.5,
+    "CHECKPOINT_SECONDS": 300,
+    "RESUME": false,
+    "WORKER_CPU_THREADS": 2,
+    "SNAPSHOT_INCLUDE_COMPLETED_BEST": true
+  },
+  "checkpoint": {
+    "format": "dual_resume_v1",
+    "fields": [
+      "current_model",
+      "best_model",
+      "optimizer",
+      "scheduler/scaler when used",
+      "Python/NumPy/Torch/CUDA RNG",
+      "epoch and batch cursor",
+      "shuffle or negative sampler state",
+      "validation history and early stopping",
+      "source/data/config identity"
+    ],
+    "atomic_commit": true,
+    "completed_best_retained": true
+  },
+  "unit_tests": {
+    "command": ".venv-validation313/Scripts/python.exe -m unittest discover -s tests -p test_dual_resume.py -v",
+    "total": 9,
+    "passed": 9,
+    "failed": 0,
+    "elapsed_seconds": 39.436,
+    "test_names": [
+      "test_lm_mid_epoch_resume_preserves_model_optimizer_scheduler_rng",
+      "test_lm_validation_phase_resume",
+      "test_author_compat_legacy_optimizer_resume",
+      "test_baseline_microbatch_mid_epoch_resume",
+      "test_old_and_new_lm_training_match_without_interruption",
+      "test_checkpoint_rejects_changed_identity_or_environment",
+      "test_queue_claims_are_unique_and_gpu_masks_are_distinct",
+      "test_snapshot_interruption_keeps_previous_archive",
+      "test_two_workers_pause_snapshot_restore_and_finish_without_duplicates"
+    ],
+    "scope": "CPU smoke with actual model training, optimizer state and two subprocesses; author_compat optimizer test uses a fixed validation score"
+  },
+  "delivered_notebook_execution": {
+    "passed": true,
+    "notebook": "C:\\Users\\ASUS\\SimpleDyG\\notebooks\\SimpleDyG_Kaggle_2GPU_Resume.ipynb",
+    "phases": [
+      {
+        "phase": "fresh",
+        "code_cells_executed": 7,
+        "complete_runs": 5,
+        "worker_ids": [
+          0,
+          1
+        ],
+        "reused_without_training": false,
+        "all_best_checkpoints_retained": true
+      },
+      {
+        "phase": "restored",
+        "code_cells_executed": 7,
+        "complete_runs": 5,
+        "worker_ids": [
+          0,
+          1
+        ],
+        "reused_without_training": true,
+        "all_best_checkpoints_retained": true
+      }
+    ],
+    "elapsed_seconds": 30.73,
+    "scope": "Python 3.13 local CPU; actual two-process pipeline and ZIP restore; no live dual-T4 test"
+  },
+  "validation_environment": {
+    "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+    "torch": "2.6.0+cpu",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "cuda": null,
+    "device": "CPU"
+  },
+  "scientific_changes": [
+    "Baseline gradient accumulation: paper micro-batch 8, logical batch 128; dropout sequence/rounding can differ from old one-forward baseline.",
+    "New campaign starts fresh; old single-GPU result/checkpoint format is not reused."
+  ],
+  "limitations": [
+    "No live dual-T4 validation; speed and full-profile VRAM unverified.",
+    "Tests do not establish paper-level reproduction metrics or completion within one Kaggle session.",
+    "Resume requires the saved source/data/config and compatible identical recorded environment."
+  ]
+}

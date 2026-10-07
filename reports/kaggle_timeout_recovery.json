@@ -1,0 +1,125 @@
+{
+  "source": "incomplete original ZIP local records and preserved run_manifest.json",
+  "manifest_complete_runs": 35,
+  "direct_result_json_count": 17,
+  "result_json_restored_from_manifest": [
+    "UCI_13_SimpleDyG_full_s1_0b83e45cb32a",
+    "UCI_13_SimpleDyG_full_s3_14f88d84f814",
+    "UCI_13_SimpleDyG_full_s4_18d0c4b818f1",
+    "UCI_13_SimpleDyG_full_s5_d92e042387c5",
+    "UCI_13_SimpleDyG_full_s7_9a1bc8e61a16",
+    "UCI_13_SimpleDyG_full_s8_1dde0f17a845",
+    "UCI_13_SimpleDyG_same_time_s2_747ae3074267",
+    "UCI_13_SimpleDyG_same_time_s4_6e84c717dedb",
+    "UCI_13_SimpleDyG_same_time_s7_36d6bc43bc3e",
+    "UCI_13_SimpleDyG_no_time_s0_6f6b4c7a1b22",
+    "UCI_13_SimpleDyG_no_time_s3_ec335eff6e33",
+    "UCI_13_SimpleDyG_no_time_s4_600bbe6e165e",
+    "UCI_13_SimpleDyG_no_time_s5_8c04c7b57a68",
+    "UCI_13_SimpleDyG_no_time_s6_d1742ed4777f",
+    "UCI_13_SimpleDyG_no_time_s7_75cd0f9db62b",
+    "UCI_13_TGAT_full_s0_bc0998d2aaaa",
+    "UCI_13_TGAT_full_s2_beca54038098",
+    "UCI_13_TGAT_full_s3_0fb75f78ec17"
+  ],
+  "missing_best_checkpoints": [
+    "UCI_13_SimpleDyG_full_s1_0b83e45cb32a",
+    "UCI_13_SimpleDyG_full_s3_14f88d84f814",
+    "UCI_13_SimpleDyG_full_s4_18d0c4b818f1",
+    "UCI_13_SimpleDyG_full_s5_d92e042387c5",
+    "UCI_13_SimpleDyG_full_s7_9a1bc8e61a16",
+    "UCI_13_SimpleDyG_full_s8_1dde0f17a845",
+    "UCI_13_SimpleDyG_same_time_s2_747ae3074267",
+    "UCI_13_SimpleDyG_same_time_s4_6e84c717dedb",
+    "UCI_13_SimpleDyG_same_time_s7_36d6bc43bc3e",
+    "UCI_13_SimpleDyG_no_time_s0_6f6b4c7a1b22",
+    "UCI_13_SimpleDyG_no_time_s3_ec335eff6e33",
+    "UCI_13_SimpleDyG_no_time_s4_600bbe6e165e",
+    "UCI_13_SimpleDyG_no_time_s5_8c04c7b57a68",
+    "UCI_13_SimpleDyG_no_time_s6_d1742ed4777f",
+    "UCI_13_SimpleDyG_no_time_s7_75cd0f9db62b",
+    "UCI_13_SimpleDyG_no_time_s8_ddee4221376b",
+    "UCI_13_TGAT_full_s0_bc0998d2aaaa",
+    "UCI_13_TGAT_full_s2_beca54038098",
+    "UCI_13_TGAT_full_s3_0fb75f78ec17"
+  ],
+  "missing_test_predictions": [
+    "UCI_13_SimpleDyG_full_s1_0b83e45cb32a",
+    "UCI_13_SimpleDyG_full_s3_14f88d84f814",
+    "UCI_13_SimpleDyG_full_s4_18d0c4b818f1",
+    "UCI_13_SimpleDyG_full_s5_d92e042387c5",
+    "UCI_13_SimpleDyG_full_s7_9a1bc8e61a16",
+    "UCI_13_SimpleDyG_full_s8_1dde0f17a845",
+    "UCI_13_SimpleDyG_same_time_s2_747ae3074267",
+    "UCI_13_SimpleDyG_same_time_s4_6e84c717dedb",
+    "UCI_13_SimpleDyG_same_time_s7_36d6bc43bc3e",
+    "UCI_13_SimpleDyG_no_time_s0_6f6b4c7a1b22",
+    "UCI_13_SimpleDyG_no_time_s3_ec335eff6e33",
+    "UCI_13_SimpleDyG_no_time_s4_600bbe6e165e",
+    "UCI_13_SimpleDyG_no_time_s5_8c04c7b57a68",
+    "UCI_13_SimpleDyG_no_time_s6_d1742ed4777f",
+    "UCI_13_SimpleDyG_no_time_s7_75cd0f9db62b",
+    "UCI_13_TGAT_full_s0_bc0998d2aaaa",
+    "UCI_13_TGAT_full_s2_beca54038098",
+    "UCI_13_TGAT_full_s3_0fb75f78ec17"
+  ],
+  "metrics_modified": false,
+  "optimizer_resume_supported": false,
+  "source_original_modified": false,
+  "recovered_archive_all_member_crc_passed": true,
+  "small_archive_all_member_crc_passed": true,
+  "recovered_checkpoint_count": 16,
+  "continuation_input_bytes": 838848,
+  "validation": {
+    "continuation_tests_passed": 5,
+    "continuation_tests_failed": 0,
+    "test_runtime_seconds": 14.315,
+    "notebook_schema_passed": true,
+    "notebook_code_syntax_passed": true,
+    "embedded_core_identical": true,
+    "complete_manifest_results_equal": 35,
+    "source_data_and_100_run_ids_verified": true,
+    "scope": "local Python 3.13 CPU checks; two resumed smoke sessions; real paper artifacts verified without additional GPU training"
+  },
+  "complete_run_counts": [
+    {
+      "dataset": "UCI_13",
+      "model": "SimpleDyG",
+      "variant": "full",
+      "count": 10
+    },
+    {
+      "dataset": "UCI_13",
+      "model": "SimpleDyG",
+      "variant": "same_time",
+      "count": 10
+    },
+    {
+      "dataset": "UCI_13",
+      "model": "SimpleDyG",
+      "variant": "no_time",
+      "count": 10
+    },
+    {
+      "dataset": "UCI_13",
+      "model": "TGAT",
+      "variant": "full",
+      "count": 5
+    }
+  ],
+  "remaining_runs": 65,
+  "files": {
+    "notebooks/SimpleDyG_Kaggle_Continue.ipynb": {
+      "bytes": 91285,
+      "sha256": "2df58a31ac13bfe84d5d3d8f291ded150d5f01c56fdec0ca7af732b150e079ea"
+    },
+    "recovery/SimpleDyG_Continue_Input.zip": {
+      "bytes": 838848,
+      "sha256": "7504900e83c2af5b5397828378a98ce9db7ae15531fee3da58046b1993f62b3a"
+    },
+    "recovery/simpledyg_paper_author_compat_recovered.zip": {
+      "bytes": 2326365772,
+      "sha256": "a6d6fc96919502a1e4d7c292af94da2b9476e546ea6fb91a1848eef8397f79a4"
+    }
+  }
+}

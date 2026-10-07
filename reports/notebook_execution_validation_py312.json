@@ -1,0 +1,24 @@
+{
+  "code_cells_executed": 7,
+  "all_cells_passed": true,
+  "offline_bundle_passed": true,
+  "completed_run_reuse_passed": true,
+  "smoke_runs": 5,
+  "elapsed_seconds": 69.68,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.5.1+cpu",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "cuda": null,
+    "device": "cpu",
+    "gpu": null,
+    "author_expected_commit": "fa0dc82587d8ce787345a0379f65a0dcf5d9d9ff",
+    "dyglib_expected_commit": "3aacc36b94b8d2d8293d70a74fdf6d39089b4163",
+    "boto3": "1.43.108",
+    "tokenizer_runtime": "embedded NodeTokenizer; no Hugging Face/Rust dependency",
+    "author_optimizer": "embedded legacy AdamW arithmetic"
+  },
+  "hf_imports_blocked": true,
+  "scope": "fresh local Python execution of all notebook cells; CPU smoke; not a Kaggle GPU full run"
+}

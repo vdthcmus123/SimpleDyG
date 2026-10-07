@@ -1,0 +1,72 @@
+{
+  "UCI_13": {
+    "dataset": "UCI_13",
+    "nodes": 1781,
+    "edges": 16743,
+    "splits": {
+      "val": {
+        "queries": 146,
+        "max_length": 335,
+        "above_context": 0,
+        "duplicate_targets": 0
+      },
+      "test": {
+        "queries": 110,
+        "max_length": 339,
+        "above_context": 0,
+        "duplicate_targets": 0
+      },
+      "train": {
+        "queries": 1708,
+        "max_length": 346,
+        "truncated": 0
+      }
+    },
+    "files": {
+      "resources/UCI_13/12/train.link_prediction": "666943a8e351e5f978aae1471fb26f59ac948d59d0ad2ad16f831ae4aeb52780",
+      "resources/UCI_13/12/val.link_prediction": "ed920db17e188307edfc198f2e49f7502ef744df49bca883a3bb085bab4fb57a",
+      "resources/UCI_13/12/val_gt.link_prediction": "49bbf6101fb2153c3c103fe15958364fc01c084d89dba00df3b7bb5b3471a9f3",
+      "resources/UCI_13/12/test.link_prediction": "ced681b08e10e3fd820002cbcf012a0651d02cd44d837cfb50456a2e5443da9e",
+      "resources/UCI_13/12/test_gt.link_prediction": "33a33cf6316d7fe2b322a771f50d2e82251be4f1879f4cade6b2e64f988a00a2",
+      "vocabs/UCI_13/12/vocab.json": "e10c43dcdea7a5fa267eda6549ab77eadfc83a47460b32cbdc97b323b453442d",
+      "all_data/uci/12/ml_uci.csv": "a216c02206f9d3b682bc476c4d1cc195c05f784ef307ac22b30fd1bb05626290"
+    },
+    "query_scope": "released source-node queries; raw graph used as undirected history by baselines",
+    "closed_world_vocabulary": "all released node identities, including future identities; no future edges as history"
+  },
+  "ML_10M_13": {
+    "dataset": "ML_10M_13",
+    "nodes": 15841,
+    "edges": 48561,
+    "splits": {
+      "val": {
+        "queries": 738,
+        "max_length": 2605,
+        "above_context": 3,
+        "duplicate_targets": 0
+      },
+      "test": {
+        "queries": 396,
+        "max_length": 2985,
+        "above_context": 2,
+        "duplicate_targets": 0
+      },
+      "train": {
+        "queries": 13701,
+        "max_length": 2980,
+        "truncated": 12
+      }
+    },
+    "files": {
+      "resources/ML_10M_13/12/train.link_prediction": "81130126a9162c99b8c2117757847bb2dc47af5d6c38f0583607e2fa518620e5",
+      "resources/ML_10M_13/12/val.link_prediction": "32d234bc7e61b6d23c4d59330698b7c75faff243e0f5a52b98b1786a6d8f3a80",
+      "resources/ML_10M_13/12/val_gt.link_prediction": "f74bfa3d04e0b12cc7d5c2a8d517ab14ac28f907c67d07809765eb442f099b78",
+      "resources/ML_10M_13/12/test.link_prediction": "811ab6d75012f759729efa3c38fa51e21d3249dc5a5e4fcdbcdca9aafb64ec17",
+      "resources/ML_10M_13/12/test_gt.link_prediction": "31df6f231ce1547d0ac43f667283382ddd83d47922f0cd84fe3dcc37435c0b92",
+      "vocabs/ML_10M_13/12/vocab.json": "f83e043b8e2de3efb114d38ab33f258794265c33320aba8f6ef77b7a159d7263",
+      "all_data/movie/12/ml_movie.csv": "4a5e9a7df955d998706e2fbcfefd29f0c4a2e46b603442f5f7d3b340cf7a8ecd"
+    },
+    "query_scope": "released source-node queries; raw graph used as undirected history by baselines",
+    "closed_world_vocabulary": "all released node identities, including future identities; no future edges as history"
+  }
+}

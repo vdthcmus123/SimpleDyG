@@ -1,0 +1,8 @@
+.venv-validation/
+.venv-validation313/
+tmp/
+__pycache__/
+*.pyc
+paper_extracted.txt
+kaggle_working/
+recovery/
