@@ -7,10 +7,10 @@ Phiên trước chạy tuần tự trên `cuda:0`; nó không phân chia thí ng
 ## Hai file cần dùng
 
 - [Notebook chạy từ đầu](../notebooks/SimpleDyG_Kaggle_2GPU_Resume.ipynb): toàn bộ runtime nằm trong notebook, không cần upload thêm file `.py`.
-- [Notebook chạy tiếp đã sửa source inventory](../notebooks/SimpleDyG_Kaggle_2GPU_Continue_Fixed.ipynb): mặc định `RESUME=True`, dùng với Output của phiên gần nhất.
+- Chạy tiếp phiên trước: dùng chính notebook trên, đặt `RESUME=True` (notebook tự đối chiếu source inventory với Output cũ).
 - [ZIP source và dữ liệu mới](../notebooks/SimpleDyG_Kaggle_2GPU_Inputs.zip): khoảng 1,4 MB; chứa source và dataset đã preprocess của bundle cũ, thêm manifest của bản hai GPU. Đây là gói input để chạy từ đầu, không phải ZIP kết quả 2,41 GB của phiên trước.
 
-Repo tác giả và DyGLib giữ nguyên commit được pin. Các file của phiên cũ và gói khôi phục 35 lượt được giữ lại để đối chiếu. Bản mới bắt đầu một chiến dịch thí nghiệm riêng; không đưa 35 kết quả cũ vào bảng kết quả mới.
+Repo tác giả và DyGLib giữ nguyên commit được pin. Bản mới bắt đầu một chiến dịch thí nghiệm riêng; không đưa 35 kết quả cũ vào bảng kết quả mới.
 
 ## Phiên đầu
 
@@ -36,7 +36,7 @@ Mặc định `SNAPSHOT_INCLUDE_COMPLETED_BEST=True`: ZIP chứa checkpoint đ�
 
 ## Phiên tiếp theo
 
-1. Dùng notebook hai GPU hoặc bản `Continue_Fixed` trên, cùng ZIP source và image PyTorch/GPU type của phiên trước. Chọn **GPU T4 x2**.
+1. Dùng notebook hai GPU trên với `RESUME=True`, cùng ZIP source và image PyTorch/GPU type của phiên trước. Chọn **GPU T4 x2**.
 2. Add Input **Output mới nhất** của notebook hoặc ZIP `resume_snapshot.zip` mới nhất. Bỏ snapshot cũ khỏi Input để tránh chọn nhầm.
 3. Đổi `RESUME=True`. Giữ `RESUME_FROM=""` để tự tìm nếu chỉ có một bộ kết quả đúng; nếu có nhiều bộ, điền đường dẫn ZIP hoặc thư mục kết quả cần tiếp tục trong `/kaggle/input/...`.
 4. Run All. Notebook khôi phục Input vào Working, tải cấu hình đã lưu, bỏ qua run hoàn thành và ưu tiên run có checkpoint. Log `RESUME ... epoch=... next_batch=... phase=...` cho biết đã khôi phục lượt đang dở.

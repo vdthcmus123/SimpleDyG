@@ -1,8 +1,19 @@
-.venv-validation/
-.venv-validation313/
-tmp/
+# Môi trường và cache cục bộ
+.venv*/
 __pycache__/
 *.pyc
-paper_extracted.txt
+tmp/
 kaggle_working/
+simpledyg_figures_work/
+
+# Kết quả nặng (giữ trên Kaggle Output, không đưa vào repo)
+*.pt
+resume_snapshot*.zip
+simple_dyg_result.zip
 recovery/
+
+# Dữ liệu trung gian khi dựng lại slide (sinh bằng prepare_data.py)
+reports/slides_src/data/*
+!reports/slides_src/data/all_runs.csv
+reports/slides_src/build/*.pdf
+reports/slides_src/build/overlay.html

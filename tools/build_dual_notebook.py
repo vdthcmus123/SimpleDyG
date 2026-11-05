@@ -178,35 +178,25 @@ paused/pending thể hiện lịch còn thiếu. Chỉ báo kết quả theo s�
             ast.parse(cell.source)
     target = ROOT / 'notebooks/SimpleDyG_Kaggle_2GPU_Resume.ipynb'
     nbf.write(notebook, target)
-    resume_notebook = copy.deepcopy(notebook)
-    resume_notebook.cells[0].source = resume_notebook.cells[0].source.replace(
-        '# SimpleDyG: hai GPU T4 và checkpoint đầy đủ',
-        '# SimpleDyG: bản sửa chạy tiếp từ Output và source manifest', 1)
-    resume_notebook.cells[0].source += '''\n\n**Bản chạy tiếp:** mặc định `RESUME=True`.
-Add Input Output của phiên thành công gần nhất và chọn GPU T4 x2. Giữ ZIP source
-cũ nếu có; khi cần clone repo, notebook vẫn đối chiếu inventory/checksum của Output.
-Lỗi `Existing output has different config/core/source` do full clone có thêm file
-được xử lý ở phần chuẩn bị source; checkpoint và training runtime không thay đổi.
-'''
-    resume_notebook.cells[1].source = resume_notebook.cells[1].source.replace(
-        '# Run mới từ đầu:', '# Chạy tiếp Output mới nhất:', 1).replace(
-        'RESUME = False', 'RESUME = True', 1)
-    resume_target = ROOT / 'notebooks/SimpleDyG_Kaggle_2GPU_Continue_Fixed.ipynb'
-    nbf.validate(resume_notebook)
-    nbf.write(resume_notebook, resume_target)
+    # Resuming uses the same notebook with RESUME=True; no separate Continue notebook is generated.
     archive = ROOT / 'notebooks/SimpleDyG_Kaggle_2GPU_Inputs.zip'
-    with zipfile.ZipFile(ROOT / 'notebooks/SimpleDyG_Kaggle_Inputs.zip') as old, zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as fresh:
-        for info in old.infolist():
-            fresh.writestr(info.filename, old.read(info))
+    # Source/data members come from the single-GPU bundle when it exists; otherwise the
+    # existing 2-GPU bundle is reused (its two generated manifest files are rewritten below).
+    legacy = ROOT / 'notebooks/SimpleDyG_Kaggle_Inputs.zip'
+    with zipfile.ZipFile(legacy if legacy.exists() else archive) as old:
+        members = [(info.filename, old.read(info)) for info in old.infolist()
+                   if info.filename not in {'DUAL_RUNTIME_MANIFEST.json', 'HOW_TO_RUN.txt'}]
+    with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as fresh:
+        for name, data in members:
+            fresh.writestr(name, data)
         fresh.writestr('DUAL_RUNTIME_MANIFEST.json', json.dumps(dict(runtime_sha256=fingerprint,
                       execution_format='dual_resume_v1', notebook=target.name, workers=2,
-                      source_data_unchanged=True, resume_notebook=resume_target.name,
+                      source_data_unchanged=True, resume_notebook=target.name,
                       source_alignment_sha256=hashlib.sha256(source_alignment.encode()).hexdigest()), indent=2))
         fresh.writestr('HOW_TO_RUN.txt', 'Import SimpleDyG_Kaggle_2GPU_Resume.ipynb, attach this source bundle, choose GPU T4 x2.\nFirst session RESUME=False. Later attach latest resume_snapshot.zip or full Output and set RESUME=True.\nKeep runtime/config/data fixed. Completed best.pt files remain in full Output.\n')
     with zipfile.ZipFile(archive) as check:
         assert check.testzip() is None
     print(target, target.stat().st_size, 'bytes')
-    print(resume_target, resume_target.stat().st_size, 'bytes')
     print(archive, archive.stat().st_size, 'bytes')
 
 
